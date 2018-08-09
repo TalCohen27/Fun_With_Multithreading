@@ -1,0 +1,139 @@
+   1              		.file	"ex_1.c"
+   3              		.section .rdata,"dr"
+   4              		.align 4
+   5              	LC0:
+   6 0000 4265666F 		.ascii "Before...\12src1 is: %s \12src2 is: %s \12\0"
+   6      72652E2E 
+   6      2E0A7372 
+   6      63312069 
+   6      733A2025 
+   7 0025 000000   		.align 4
+   8              	LC1:
+   9 0028 41667465 		.ascii "After...(destination string)\12%s\0"
+   9      722E2E2E 
+   9      28646573 
+   9      74696E61 
+   9      74696F6E 
+  10              		.text
+  11              		.globl	_main
+  13              	_main:
+  14              	LFB7:
+  15              		.cfi_startproc
+  16 0000 55       		pushl	%ebp
+  17              		.cfi_def_cfa_offset 8
+  18              		.cfi_offset 5, -8
+  19 0001 89E5     		movl	%esp, %ebp
+  20              		.cfi_def_cfa_register 5
+  21 0003 57       		pushl	%edi
+  22 0004 56       		pushl	%esi
+  23 0005 53       		pushl	%ebx
+  24 0006 83E4F0   		andl	$-16, %esp
+  25 0009 83EC40   		subl	$64, %esp
+  26              		.cfi_offset 7, -12
+  27              		.cfi_offset 6, -16
+  28              		.cfi_offset 3, -20
+  29 000c E8000000 		call	___main
+  29      00
+  30 0011 C7442424 		movl	$543973716, 36(%esp)
+  30      54616C20 
+  31 0019 C7442428 		movl	$1701343043, 40(%esp)
+  31      436F6865 
+  32 0021 C744242C 		movl	$1684611182, 44(%esp)
+  32      6E206964 
+  33 0029 C7442430 		movl	$808656954, 48(%esp)
+  33      3A203330 
+  34 0031 C7442434 		movl	$959591730, 52(%esp)
+  34      32353239 
+  35 0039 C7442438 		movl	$3290934, 56(%esp)
+  35      36373200 
+  36 0041 C7442412 		movl	$1701670771, 18(%esp)
+  36      736F6D65 
+  37 0049 C7442416 		movl	$1752461101, 22(%esp)
+  37      2D6F7468 
+  38 0051 C744241A 		movl	$1932358245, 26(%esp)
+  38      65722D73 
+  39 0059 C744241E 		movl	$1852404340, 30(%esp)
+  39      7472696E 
+  40 0061 66C74424 		movw	$103, 34(%esp)
+  40      226700
+  41 0068 8D442424 		leal	36(%esp), %eax
+  42 006c 890424   		movl	%eax, (%esp)
+  43 006f E8000000 		call	_strlen
+  43      00
+  44 0074 89C3     		movl	%eax, %ebx
+  45 0076 8D442412 		leal	18(%esp), %eax
+  46 007a 890424   		movl	%eax, (%esp)
+  47 007d E8000000 		call	_strlen
+  47      00
+  48 0082 01D8     		addl	%ebx, %eax
+  49 0084 890424   		movl	%eax, (%esp)
+  50 0087 E8000000 		call	_malloc
+  50      00
+  51 008c 8944243C 		movl	%eax, 60(%esp)
+  52 0090 8D442424 		leal	36(%esp), %eax
+  53 0094 890424   		movl	%eax, (%esp)
+  54 0097 E8000000 		call	_strlen
+  54      00
+  55 009c 89C1     		movl	%eax, %ecx
+  56 009e 8D442424 		leal	36(%esp), %eax
+  57 00a2 8B54243C 		movl	60(%esp), %edx
+  58 00a6 89C6     		movl	%eax, %esi
+  59 00a8 89D7     		movl	%edx, %edi
+  60              	/APP
+  61              	 # 11 "ex_1.c" 1
+  62 00aa F3A4     		rep movsb;
+  63              	 # 0 "" 2
+  64              	/NO_APP
+  65 00ac 8D442424 		leal	36(%esp), %eax
+  66 00b0 890424   		movl	%eax, (%esp)
+  67 00b3 E8000000 		call	_strlen
+  67      00
+  68 00b8 8B54243C 		movl	60(%esp), %edx
+  69 00bc 8D1C10   		leal	(%eax,%edx), %ebx
+  70 00bf 8D442412 		leal	18(%esp), %eax
+  71 00c3 890424   		movl	%eax, (%esp)
+  72 00c6 E8000000 		call	_strlen
+  72      00
+  73 00cb 89C2     		movl	%eax, %edx
+  74 00cd 8D442412 		leal	18(%esp), %eax
+  75 00d1 89C6     		movl	%eax, %esi
+  76 00d3 89DF     		movl	%ebx, %edi
+  77 00d5 89D1     		movl	%edx, %ecx
+  78              	/APP
+  79              	 # 12 "ex_1.c" 1
+  80 00d7 F3A4     		rep movsb;
+  81              	 # 0 "" 2
+  82              	/NO_APP
+  83 00d9 8D442412 		leal	18(%esp), %eax
+  84 00dd 89442408 		movl	%eax, 8(%esp)
+  85 00e1 8D442424 		leal	36(%esp), %eax
+  86 00e5 89442404 		movl	%eax, 4(%esp)
+  87 00e9 C7042400 		movl	$LC0, (%esp)
+  87      000000
+  88 00f0 E8000000 		call	_printf
+  88      00
+  89 00f5 8B44243C 		movl	60(%esp), %eax
+  90 00f9 89442404 		movl	%eax, 4(%esp)
+  91 00fd C7042428 		movl	$LC1, (%esp)
+  91      000000
+  92 0104 E8000000 		call	_printf
+  92      00
+  93 0109 8B44243C 		movl	60(%esp), %eax
+  94 010d 890424   		movl	%eax, (%esp)
+  95 0110 E8000000 		call	_free
+  95      00
+  96 0115 B8000000 		movl	$0, %eax
+  96      00
+  97 011a 8D65F4   		leal	-12(%ebp), %esp
+  98 011d 5B       		popl	%ebx
+  99              		.cfi_restore 3
+ 100 011e 5E       		popl	%esi
+ 101              		.cfi_restore 6
+ 102 011f 5F       		popl	%edi
+ 103              		.cfi_restore 7
+ 104 0120 5D       		popl	%ebp
+ 105              		.cfi_restore 5
+ 106              		.cfi_def_cfa 4, 4
+ 107 0121 C3       		ret
+ 108              		.cfi_endproc
+ 109              	LFE7:

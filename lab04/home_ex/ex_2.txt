@@ -1,0 +1,21 @@
+
+
+-readeflags
+
+pushfl
+popl %eax
+movl eax, $eflags[%ebp] 
+
+-cli
+
+cli
+
+-stosb
+
+movl $addr[%ebp], %edi	
+movl $cnt[%ebp], %ecx	
+movl $data[%ebp], %eax	
+cld
+rep stosb				
+movl %edi, $addr[%ebp]	
+movl %ecx, $cnt[%ebp]	

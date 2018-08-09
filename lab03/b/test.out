@@ -1,0 +1,9 @@
+enter your first name:
+enter your Last name:
+enter number for color:
+ 	1 - red
+    	2 - green
+  	3 - yellow
+ 	4 (or any other) - blue
+[0;0;32mHello Tal Cohen!!
+[0mbye!

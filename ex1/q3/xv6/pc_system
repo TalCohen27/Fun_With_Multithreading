@@ -1,0 +1,124 @@
+pc_system = {
+  enable_a20 = true
+  a20_mask = 0xffffffffffffffff
+  currCountdown = 5000
+  currCountdownPeriod = 5000
+  ticksTotal = 1003650000
+  lastTimeUsec = 0
+  usecSinceLast = 0
+  HRQ = false
+  timer = {
+    0 = {
+      inUse = true
+      period = 4294967295
+      timeToFire = 4294967295
+      active = true
+      continuous = true
+    }
+    1 = {
+      inUse = true
+      period = 10000000
+      timeToFire = 1006108895
+      active = true
+      continuous = true
+    }
+    2 = {
+      inUse = true
+      period = 179850
+      timeToFire = 1003702003
+      active = true
+      continuous = false
+    }
+    3 = {
+      inUse = true
+      period = 50000000
+      timeToFire = 50000000
+      active = false
+      continuous = true
+    }
+    4 = {
+      inUse = true
+      period = 50000000
+      timeToFire = 1050000000
+      active = true
+      continuous = true
+    }
+    5 = {
+      inUse = true
+      period = 12200
+      timeToFire = 1000012200
+      active = false
+      continuous = false
+    }
+    6 = {
+      inUse = true
+      period = 12500
+      timeToFire = 12500
+      active = false
+      continuous = false
+    }
+    7 = {
+      inUse = true
+      period = 5000
+      timeToFire = 1003655000
+      active = true
+      continuous = true
+    }
+    8 = {
+      inUse = true
+      period = 50000
+      timeToFire = 50000
+      active = false
+      continuous = false
+    }
+    9 = {
+      inUse = true
+      period = 12500
+      timeToFire = 1003662500
+      active = true
+      continuous = true
+    }
+    10 = {
+      inUse = true
+      period = 5000000
+      timeToFire = 962164573
+      active = false
+      continuous = false
+    }
+    11 = {
+      inUse = true
+      period = 50000
+      timeToFire = 50000
+      active = false
+      continuous = false
+    }
+    12 = {
+      inUse = true
+      period = 50000
+      timeToFire = 50000
+      active = false
+      continuous = false
+    }
+    13 = {
+      inUse = true
+      period = 41650
+      timeToFire = 938010657
+      active = false
+      continuous = false
+    }
+    14 = {
+      inUse = true
+      period = 5000000
+      timeToFire = 1006157398
+      active = true
+      continuous = false
+    }
+    15 = {
+      inUse = true
+      period = 1
+      timeToFire = 1
+      active = false
+      continuous = false
+    }
+  }
+}
